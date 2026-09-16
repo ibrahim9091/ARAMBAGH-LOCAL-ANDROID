@@ -16,7 +16,10 @@ export default function App() {
 
   const findRide = () => {
     if (!pickup.trim()) {
-      Alert.alert('Pickup required', 'Please enter your pickup location.');
+      Alert.alert(
+        'Pickup required',
+        'Please enter your pickup location.'
+      );
       return;
     }
 
@@ -29,8 +32,8 @@ export default function App() {
     }
 
     Alert.alert(
-      'Ride Search',
-      From: ${pickup}\nTo: ${destination}
+      'Searching...',
+      Searching for a ride from ${pickup} to ${destination}.
     );
   };
 
@@ -38,7 +41,10 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}>ARAMBAGH LOCAL</Text>
-        <Text style={styles.subtitle}>Book Your Ride</Text>
+
+        <Text style={styles.subtitle}>
+          Local Ride Booking
+        </Text>
 
         <View style={styles.card}>
           <Text style={styles.label}>Pickup Location</Text>
@@ -63,19 +69,15 @@ export default function App() {
             style={styles.button}
             onPress={findRide}
           >
-            <Text style={styles.buttonText}>FIND RIDE</Text>
+            <Text style={styles.buttonText}>
+              Find Ride
+            </Text>
           </TouchableOpacity>
         </View>
 
-        <View style={styles.info}>
-          <Text style={styles.infoTitle}>
-            Welcome to Arambagh Local
-          </Text>
-
-          <Text style={styles.infoText}>
-            Enter your pickup and destination to search for a ride.
-          </Text>
-        </View>
+        <Text style={styles.info}>
+          Fast and easy local ride booking in Arambagh.
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     marginTop: 8,
-    marginBottom: 25,
+    marginBottom: 30,
   },
 
   card: {
@@ -114,8 +116,8 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginTop: 10,
     marginBottom: 8,
+    marginTop: 10,
   },
 
   input: {
@@ -124,7 +126,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 14,
     fontSize: 16,
-    backgroundColor: '#fafafa',
+    backgroundColor: '#ffffff',
   },
 
   button: {
@@ -137,25 +139,13 @@ const styles = StyleSheet.create({
 
   buttonText: {
     color: '#ffffff',
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: 'bold',
   },
 
   info: {
+    textAlign: 'center',
     marginTop: 25,
-    padding: 20,
-    backgroundColor: '#ffffff',
-    borderRadius: 15,
-  },
-
-  infoTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 8,
-  },
-
-  infoText: {
-    fontSize: 15,
-    lineHeight: 22,
+    fontSize: 14,
   },
 });
